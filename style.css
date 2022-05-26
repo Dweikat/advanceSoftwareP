@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.main-box {
+width: 70%;
+margin: auto;
+}
+.logo { 
+font-family: 'Koulen', cursive;
+font-size: 30pt;
+margin-top: 20px;
+line-height: 30px;
+}
+.logo>a{
+    text-decoration: none;
+    color: rgb(9, 165, 238);
+    
+}
+.logo::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display:inline-block;
+    border-bottom:3px solid rgb(9, 165, 238);
+}
+.blue {
+    color: rgb(9, 165, 238);
+}
+
+.content-box {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    /*border: 1px solid rgb(247, 76, 9);*/
+}
+.left-box {
+    /* border: 1px solid rgb(233, 151, 0); */
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  
+}
+.right-box {
+/* border: 1px solid rebeccapurple; */
+grid-row-start: 1;
+grid-row-end: 5;
+grid-column-start:2;
+grid-column-end: 6;
+}
+
+.about::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: inline-block;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+#mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+.right-box>h2{
+    color: rgb(9, 165, 238);
+    font-family: 'Koulen',
+    cursive;
+}
+
+

@@ -1,0 +1,346 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>info page</title>
+</head>
+<body onload="init();">
+
+    <div class="main-box" id="main">
+        <header>
+            <h1 class="logo blue"><a href="#">Movie website users </a></h1>
+        </header>
+        <div class="search">
+             <input type="text" id="mySearch" onkeyup="searchfunction()" placeholder="Search.." title="Type in a category">
+        </div>
+
+        <!-- <div class="content-box">
+            <div class="left-box">
+                <img src="avatar.PNG" alt="avatar img" style="width:300px;height:300px;">
+            </div>
+            <div class="right-box">
+                <h2>name</h2>
+
+            
+                <div dir="rtl"><button type="button" class="btn btn-danger" >Delete</button></div>
+                <div  class="about"><i class="glyphicon glyphicon-user"></i> About</div> 
+                <table>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>+970 000 000 0000</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>test@test.com</td>
+                    </tr>
+                    <tr>
+                        <td>Gender:</td>
+                        <td>male</td>
+                    </tr>
+                    <tr>
+                        <td>Birthday:</td>
+                        <td>01/01/2020</td>
+                    </tr>
+                </table>
+
+                
+
+                </div>
+            </div>
+
+        </div> -->
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+
+function a(){
+               var div0 = document.createElement("div");
+                div0.className  = 'content-box';
+
+                var div1 = document.createElement("div");
+                div1.className  = 'left-box';
+              //  div1.appendChild(myArray[6]);
+
+                var div2 = document.createElement("div");
+                div2.className  = 'right-box';
+               
+
+                var h2 = document.createElement("h2");
+                var texth2 = document.createTextNode("name 2 ");
+                h2.appendChild(texth2);
+                div2.appendChild(h2);
+
+
+
+                var div3 = document.createElement("div");
+                div3.dir="rtl";
+
+
+                var button = document.createElement("button");
+                button.className = "btn btn-danger";
+                button.type = "button";
+                button.innerText = "delete";
+                div3.appendChild(button);
+                div2.appendChild(div3);
+
+                var div4 = document.createElement("div");
+                div4.className  ="about";
+
+                var ii = document.createElement("i");
+                ii.className  ="glyphicon glyphicon-user";
+                var textii = document.createTextNode("  About");
+
+                div4.appendChild(ii);
+                div4.appendChild(textii);                
+                div2.appendChild(div4);
+
+                 var tablee = document.createElement("table");
+                 // tr ---------------------------------------------------
+                  var tr1 = document.createElement("tr");
+
+                  var td11 = document.createElement("td");
+                  var text11 = document.createTextNode("Phone:");
+                  td11.appendChild(text11);
+
+                  var td21 = document.createElement("td");
+                  var text21 = document.createTextNode(" +970 000 000 0000");
+                  td21.appendChild(text21);
+
+                  tr1.appendChild(td11);
+                  tr1.appendChild(td21);
+                  tablee.appendChild(tr1);
+
+                  // tr ---------------------------------------------------
+                  var tr2 = document.createElement("tr");
+
+                  var td12 = document.createElement("td");
+                  var text12 = document.createTextNode("Email:");
+                  td12.appendChild(text12);
+
+                  var td22 = document.createElement("td");
+                  var text22 = document.createTextNode("test@test.com");
+                  td22.appendChild(text22);
+
+                  tr2.appendChild(td12);
+                  tr2.appendChild(td22);
+                  tablee.appendChild(tr2);
+
+                   // tr ---------------------------------------------------
+                  var tr3 = document.createElement("tr");
+
+                  var td13 = document.createElement("td");
+                  var text13 = document.createTextNode("Gender:");
+                  td13.appendChild(text13);
+
+                  var td23 = document.createElement("td");
+                  var text23 = document.createTextNode("male");
+                  td23.appendChild(text23);
+
+                  tr3.appendChild(td13);
+                  tr3.appendChild(td23);
+                  tablee.appendChild(tr3);
+                    
+                 // tr ---------------------------------------------------
+                  var tr4 = document.createElement("tr");
+
+                  var td14 = document.createElement("td");
+                  var text14 = document.createTextNode("Birthday:");
+                  td14.appendChild(text14);
+
+                  var td24 = document.createElement("td");
+                  var text24 = document.createTextNode("01/01/2020");
+                  td24.appendChild(text24);
+
+                  tr4.appendChild(td14);
+                  tr4.appendChild(td24);
+                  tablee.appendChild(tr4);
+
+                 div2.appendChild(tablee);
+
+
+
+
+
+  div0.appendChild(div1);
+  div0.appendChild(div2);
+
+document.getElementById("main").appendChild(div0);
+
+}
+    
+         function init(){
+             
+        
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.onreadystatechange = function() {
+         
+      if (this.readyState == 4 && this.status == 200) {
+      
+        let txt = this.responseText; 
+        const Array = txt.split("$$");
+        for (let i=0;i <Array.length-1 ;i++) {
+            const myArray = Array[i].split("#");
+            var div0 = document.createElement("div");
+                div0.className  = 'content-box';
+
+                var div1 = document.createElement("div");
+                div1.className  = 'left-box';
+                var img = document.createElement("img");
+                img.src =myArray[5];
+                img.style="width:300px;height:300px;";
+                //var text00 = document.createTextNode(myArray[5]);
+                 
+                div1.appendChild(img);
+
+                var div2 = document.createElement("div");
+                div2.className  = 'right-box';
+               
+
+                var h2 = document.createElement("h2");
+                var texth2 = document.createTextNode(myArray[0]);
+                h2.appendChild(texth2);
+                div2.appendChild(h2);
+
+
+
+                var div3 = document.createElement("div");
+                div3.dir="rtl";
+
+
+                var button = document.createElement("button");
+                button.className = "btn btn-danger";
+                button.type = "button";
+                button.innerText = "delete";
+                div3.appendChild(button);
+                div2.appendChild(div3);
+
+                var div4 = document.createElement("div");
+                div4.className  ="about";
+
+                var ii = document.createElement("i");
+                ii.className  ="glyphicon glyphicon-user";
+                var textii = document.createTextNode("  About");
+
+                div4.appendChild(ii);
+                div4.appendChild(textii);                
+                div2.appendChild(div4);
+
+                 var tablee = document.createElement("table");
+                 // tr ---------------------------------------------------
+                  var tr1 = document.createElement("tr");
+
+                  var td11 = document.createElement("td");
+                  var text11 = document.createTextNode("Phone:");
+                  td11.appendChild(text11);
+
+                  var td21 = document.createElement("td");
+                  var text21 = document.createTextNode(myArray[1]);
+                  td21.appendChild(text21);
+
+                  tr1.appendChild(td11);
+                  tr1.appendChild(td21);
+                  tablee.appendChild(tr1);
+
+                  // tr ---------------------------------------------------
+                  var tr2 = document.createElement("tr");
+
+                  var td12 = document.createElement("td");
+                  var text12 = document.createTextNode("Email:");
+                  td12.appendChild(text12);
+
+                  var td22 = document.createElement("td");
+                  var text22 = document.createTextNode(myArray[2]);
+                  td22.appendChild(text22);
+
+                  tr2.appendChild(td12);
+                  tr2.appendChild(td22);
+                  tablee.appendChild(tr2);
+
+                   // tr ---------------------------------------------------
+                  var tr3 = document.createElement("tr");
+
+                  var td13 = document.createElement("td");
+                  var text13 = document.createTextNode("Gender:");
+                  td13.appendChild(text13);
+
+                  var td23 = document.createElement("td");
+                  var text23 = document.createTextNode(myArray[3]);
+                  td23.appendChild(text23);
+
+                  tr3.appendChild(td13);
+                  tr3.appendChild(td23);
+                  tablee.appendChild(tr3);
+                    
+                 // tr ---------------------------------------------------
+                  var tr4 = document.createElement("tr");
+
+                  var td14 = document.createElement("td");
+                  var text14 = document.createTextNode("Birthday:");
+                  td14.appendChild(text14);
+
+                  var td24 = document.createElement("td");
+                  var text24 = document.createTextNode(myArray[4]);
+                  td24.appendChild(text24);
+
+                  tr4.appendChild(td14);
+                  tr4.appendChild(td24);
+                  tablee.appendChild(tr4);
+
+                 div2.appendChild(tablee);
+
+
+
+
+
+  div0.appendChild(div1);
+  div0.appendChild(div2);
+
+document.getElementById("main").appendChild(div0);
+           
+        }
+        
+        
+
+
+      }    
+        
+    };
+    xmlhttp.open("GET", "http://localhost/server.php?req=getuser", true);
+    xmlhttp.send();
+    }
+
+</script>
+
+<script>
+function searchfunction() {
+    var input, filter,p, txtValue;
+    input = document.getElementById("mySearch");
+    filter = input.value;
+
+    p = document.getElementsByClassName("content-box");
+
+
+    for (i = 0; i < p.length; i++) {
+
+        txtValue = p[i].textContent || p[i].innerText;
+        if (txtValue.indexOf(filter) > -1) {
+          p[i].style.display = "";
+        } else {
+            p[i].style.display = "none";
+        }
+    }
+}
+</script>
